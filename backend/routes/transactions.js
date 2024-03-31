@@ -1,7 +1,9 @@
+const {addIncome, getIncomes, deleteIncome} = require("../controllers/income");
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    res.send('Transactions route')
-})
+router
+    .post('/incomes', addIncome)
+    .get('/incomes', getIncomes)
+    .delete('/incomes/:id', deleteIncome)
 
 module.exports = router;
